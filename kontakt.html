@@ -6,33 +6,46 @@
     <meta name="description" content="Zadzwoń bezpośrednio: 889 987 681.">
     <title>Kontakt - Łukasz Bagnowski</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Roboto', sans-serif; }
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased min-h-screen flex flex-col">
-    <nav class="w-full bg-white shadow-md p-4 flex flex-wrap justify-between items-center sticky top-0 z-50">
-        <div class="text-2xl font-black text-blue-700 tracking-tight w-full sm:w-auto text-center sm:text-left mb-2 sm:mb-0">Łukasz Bagnowski</div>
-        <div class="flex flex-wrap justify-center space-x-2 sm:space-x-4 text-sm sm:text-base font-medium">
-            <a href="index.html" class="hover:text-blue-600 px-2 py-1">Główna</a>
-            <a href="uslugi.html" class="hover:text-blue-600 px-2 py-1">Usługi</a>
-            <a href="realizacje.html" class="hover:text-blue-600 px-2 py-1">Realizacje</a>
-            <a href="recenzje.html" class="hover:text-blue-600 px-2 py-1">Recenzje</a>
-            <a href="faq.html" class="hover:text-blue-600 px-2 py-1">FAQ</a>
-            <a href="kontakt.html" class="hover:text-blue-600 px-2 py-1">Kontakt</a>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- Navbar -->
+    <header class="w-full bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-2xl font-extrabold text-blue-600 tracking-tight text-center">Łukasz Bagnowski<span class="block text-sm font-normal text-slate-500 mt-1">Usługi Hydrauliczne</span></div>
+            <nav class="flex flex-wrap justify-center gap-x-6 gap-y-4 text-base font-semibold text-slate-600">
+                <a href="index.html" class="hover:text-blue-600 transition">Główna</a>
+                <a href="uslugi.html" class="hover:text-blue-600 transition">Usługi</a>
+                <a href="realizacje.html" class="hover:text-blue-600 transition">Realizacje</a>
+                <a href="recenzje.html" class="hover:text-blue-600 transition">Recenzje</a>
+                <a href="faq.html" class="hover:text-blue-600 transition">FAQ</a>
+                <a href="kontakt.html" class="hover:text-blue-600 transition">Kontakt</a>
+            </nav>
         </div>
-    </nav>
-    <main class="flex-grow max-w-6xl mx-auto w-full p-4 sm:p-8">
-        <h1 class="text-3xl sm:text-5xl font-extrabold mb-6 text-gray-900 border-b-4 border-blue-600 inline-block pb-2">Skontaktuj się z nami</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto w-full px-6 py-16 md:py-24 flex flex-col items-center text-center">
         
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-8 text-slate-900 leading-tight max-w-4xl">Kontakt</h1>
+        
+        
+
         
     </main>
-    <footer class="w-full bg-gray-900 text-white p-8 text-center flex flex-col items-center">
-        <p>&copy; 2026 Łukasz Bagnowski - Usługi Hydrauliczne. Łowicz.</p>
-        <div class="flex space-x-6 mt-4">
-            <a href="#" class="hover:text-blue-400 font-bold">Facebook</a>
-            <a href="#" class="hover:text-blue-400 font-bold">Instagram</a>
+
+    <!-- Footer -->
+    <footer class="w-full bg-slate-900 text-slate-400 py-12 px-6 text-center mt-auto">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-sm md:text-base">&copy; 2026 Łukasz Bagnowski - Usługi Hydrauliczne. Łowicz.</p>
+            <div class="flex space-x-8">
+                <a href="#" class="hover:text-white transition font-medium">Facebook</a>
+                <a href="#" class="hover:text-white transition font-medium">Instagram</a>
+            </div>
         </div>
     </footer>
 </body>
