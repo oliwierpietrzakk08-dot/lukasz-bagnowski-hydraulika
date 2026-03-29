@@ -3,50 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Galeria wykonanych instalacji i montaży.">
     <title>Realizacje - Łukasz Bagnowski</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        body { font-family: 'Outfit', sans-serif; background-color: #ffffff; color: #171717; }
     </style>
 </head>
-<body class="text-slate-800 antialiased min-h-screen flex flex-col selection:bg-blue-100 selection:text-blue-900">
+<body class="antialiased min-h-screen flex flex-col selection:bg-emerald-100 selection:text-emerald-900">
 
-    <!-- Navbar -->
-    <header class="w-full bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-2xl font-extrabold text-blue-600 tracking-tight text-center">Łukasz Bagnowski<span class="block text-sm font-normal text-slate-500 mt-1">Usługi Hydrauliczne</span></div>
-            <nav class="flex flex-wrap justify-center gap-x-6 gap-y-4 text-base font-semibold text-slate-600">
-                <a href="index.html" class="hover:text-blue-600 transition">Główna</a>
-                <a href="uslugi.html" class="hover:text-blue-600 transition">Usługi</a>
-                <a href="realizacje.html" class="hover:text-blue-600 transition">Realizacje</a>
-                <a href="recenzje.html" class="hover:text-blue-600 transition">Recenzje</a>
-                <a href="faq.html" class="hover:text-blue-600 transition">FAQ</a>
-                <a href="kontakt.html" class="hover:text-blue-600 transition">Kontakt</a>
+    <header class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-8">
+            <a href="index.html" class="text-xl font-normal text-emerald-900 tracking-wide text-center">
+                Łukasz Bagnowski<br><span class="text-sm font-light text-neutral-500">Usługi Hydrauliczne</span>
+            </a>
+            <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-light text-neutral-600">
+                <a href="index.html" class="hover:text-emerald-800 transition">Główna</a>
+                <a href="o-nas.html" class="hover:text-emerald-800 transition">O nas</a>
+                <a href="uslugi.html" class="hover:text-emerald-800 transition">Usługi</a>
+                <a href="realizacje.html" class="hover:text-emerald-800 transition">Realizacje</a>
+                <a href="recenzje.html" class="hover:text-emerald-800 transition">Recenzje</a>
+                <a href="faq.html" class="hover:text-emerald-800 transition">FAQ</a>
+                <a href="kontakt.html" class="hover:text-emerald-800 transition">Kontakt</a>
             </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="flex-grow max-w-7xl mx-auto w-full px-6 py-16 md:py-24 flex flex-col items-center text-center">
+    <main class="flex-grow max-w-6xl mx-auto w-full px-6 py-24 md:py-32 flex flex-col items-center text-center">
         
-        <h1 class="text-4xl md:text-6xl font-extrabold mb-8 text-slate-900 leading-tight max-w-4xl">Nasze Realizacje</h1>
+        <h1 class="text-4xl md:text-5xl font-light mb-12 text-neutral-900 tracking-tight max-w-3xl leading-tight">Nasze realizacje.</h1>
         
         
 
         
+
+        
+
+        
+            <div class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
+                <div class="aspect-square bg-neutral-50 rounded-3xl flex items-center justify-center text-neutral-300 font-light">Zdjęcie realizacji 1</div>
+                <div class="aspect-square bg-neutral-50 rounded-3xl flex items-center justify-center text-neutral-300 font-light">Zdjęcie realizacji 2</div>
+                <div class="aspect-square bg-neutral-50 rounded-3xl flex items-center justify-center text-neutral-300 font-light">Zdjęcie realizacji 3</div>
+                <div class="aspect-square bg-neutral-50 rounded-3xl flex items-center justify-center text-neutral-300 font-light">Zdjęcie realizacji 4</div>
+            </div>
+        
+
+        
+
+        
+
+        
+
     </main>
 
-    <!-- Footer -->
-    <footer class="w-full bg-slate-900 text-slate-400 py-12 px-6 text-center mt-auto">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <p class="text-sm md:text-base">&copy; 2026 Łukasz Bagnowski - Usługi Hydrauliczne. Łowicz.</p>
-            <div class="flex space-x-8">
-                <a href="#" class="hover:text-white transition font-medium">Facebook</a>
-                <a href="#" class="hover:text-white transition font-medium">Instagram</a>
-            </div>
-        </div>
+    <footer class="w-full py-12 px-6 text-center mt-auto border-t border-neutral-100">
+        <p class="text-sm font-light text-neutral-400 tracking-wide">&copy; 2026 Łukasz Bagnowski - Usługi Hydrauliczne.</p>
     </footer>
 </body>
 </html>

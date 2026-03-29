@@ -1,12 +1,13 @@
 const fs = require('fs');
 
 const pages = [
-  { name: 'index.html', title: 'Łukasz Bagnowski - Hydraulik Łowicz', heading: 'Profesjonalna Hydraulika i Pompy Ciepła', desc: 'Rozprowadzanie wody, kanalizacja, montaż pomp ciepła. Solidnie i terminowo.' },
-  { name: 'uslugi.html', title: 'Usługi - Łukasz Bagnowski', heading: 'Nasze Usługi', desc: 'Kompleksowe instalacje sanitarne, wodne, grzewcze.' },
-  { name: 'recenzje.html', title: 'Recenzje - Łukasz Bagnowski', heading: 'Opinie Klientów', desc: 'Zobacz, co mówią o nas klienci z Łowicza i okolic.' },
-  { name: 'kontakt.html', title: 'Kontakt - Łukasz Bagnowski', heading: 'Kontakt', desc: 'Zadzwoń bezpośrednio: 889 987 681.' },
-  { name: 'faq.html', title: 'FAQ - Łukasz Bagnowski', heading: 'Często Zadawane Pytania', desc: 'Odpowiedzi na najczęstsze pytania dotyczące instalacji.' },
-  { name: 'realizacje.html', title: 'Realizacje - Łukasz Bagnowski', heading: 'Nasze Realizacje', desc: 'Galeria wykonanych instalacji i montaży.' }
+  { name: 'index.html', title: 'Łukasz Bagnowski - Hydraulik Łowicz', heading: 'Nowoczesna hydraulika i pompy ciepła.' },
+  { name: 'o-nas.html', title: 'O nas - Łukasz Bagnowski', heading: 'Kilka słów o nas.' },
+  { name: 'uslugi.html', title: 'Usługi - Łukasz Bagnowski', heading: 'Zakres naszych usług.' },
+  { name: 'realizacje.html', title: 'Realizacje - Łukasz Bagnowski', heading: 'Nasze realizacje.' },
+  { name: 'recenzje.html', title: 'Recenzje - Łukasz Bagnowski', heading: 'Co mówią klienci.' },
+  { name: 'faq.html', title: 'FAQ - Łukasz Bagnowski', heading: 'Częste pytania.' },
+  { name: 'kontakt.html', title: 'Kontakt - Łukasz Bagnowski', heading: 'Skontaktuj się z nami.' }
 ];
 
 const template = (p) => `<!DOCTYPE html>
@@ -14,102 +15,132 @@ const template = (p) => `<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="${p.desc}">
     <title>${p.title}</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        body { font-family: 'Outfit', sans-serif; background-color: #ffffff; color: #171717; }
     </style>
 </head>
-<body class="text-slate-800 antialiased min-h-screen flex flex-col selection:bg-blue-100 selection:text-blue-900">
+<body class="antialiased min-h-screen flex flex-col selection:bg-emerald-100 selection:text-emerald-900">
 
-    <!-- Navbar -->
-    <header class="w-full bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-2xl font-extrabold text-blue-600 tracking-tight text-center">Łukasz Bagnowski<span class="block text-sm font-normal text-slate-500 mt-1">Usługi Hydrauliczne</span></div>
-            <nav class="flex flex-wrap justify-center gap-x-6 gap-y-4 text-base font-semibold text-slate-600">
-                <a href="index.html" class="hover:text-blue-600 transition">Główna</a>
-                <a href="uslugi.html" class="hover:text-blue-600 transition">Usługi</a>
-                <a href="realizacje.html" class="hover:text-blue-600 transition">Realizacje</a>
-                <a href="recenzje.html" class="hover:text-blue-600 transition">Recenzje</a>
-                <a href="faq.html" class="hover:text-blue-600 transition">FAQ</a>
-                <a href="kontakt.html" class="hover:text-blue-600 transition">Kontakt</a>
+    <header class="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-8">
+            <a href="index.html" class="text-xl font-normal text-emerald-900 tracking-wide text-center">
+                Łukasz Bagnowski<br><span class="text-sm font-light text-neutral-500">Usługi Hydrauliczne</span>
+            </a>
+            <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-light text-neutral-600">
+                <a href="index.html" class="hover:text-emerald-800 transition">Główna</a>
+                <a href="o-nas.html" class="hover:text-emerald-800 transition">O nas</a>
+                <a href="uslugi.html" class="hover:text-emerald-800 transition">Usługi</a>
+                <a href="realizacje.html" class="hover:text-emerald-800 transition">Realizacje</a>
+                <a href="recenzje.html" class="hover:text-emerald-800 transition">Recenzje</a>
+                <a href="faq.html" class="hover:text-emerald-800 transition">FAQ</a>
+                <a href="kontakt.html" class="hover:text-emerald-800 transition">Kontakt</a>
             </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="flex-grow max-w-7xl mx-auto w-full px-6 py-16 md:py-24 flex flex-col items-center text-center">
+    <main class="flex-grow max-w-6xl mx-auto w-full px-6 py-24 md:py-32 flex flex-col items-center text-center">
         
-        <h1 class="text-4xl md:text-6xl font-extrabold mb-8 text-slate-900 leading-tight max-w-4xl">${p.heading}</h1>
+        <h1 class="text-4xl md:text-5xl font-light mb-12 text-neutral-900 tracking-tight max-w-3xl leading-tight">${p.heading}</h1>
         
         ${p.name === 'index.html' ? `
-            <p class="text-xl md:text-2xl text-slate-600 mb-16 max-w-3xl leading-relaxed">
-                Specjalizujemy się w instalacjach wodno-kanalizacyjnych i montażu nowoczesnych pomp ciepła. Gwarantujemy fachowe doradztwo i precyzję na terenie Łowicza i okolic.
+            <p class="text-lg md:text-xl font-light text-neutral-500 mb-16 max-w-2xl leading-relaxed">
+                Minimalizm w formie, precyzja w działaniu. Zajmujemy się profesjonalnymi instalacjami wodno-kanalizacyjnymi oraz montażem pomp ciepła na terenie Łowicza i okolic.
             </p>
             
-            <a href="tel:889987681" class="inline-flex justify-center items-center w-full sm:w-auto bg-blue-600 text-white px-10 py-5 rounded-2xl shadow-xl shadow-blue-600/20 text-xl font-bold hover:bg-blue-700 hover:scale-[1.02] active:scale-95 transition-all duration-200 mb-24">
+            <a href="tel:889987681" class="inline-flex justify-center items-center bg-emerald-900 text-white px-10 py-4 rounded-full text-lg font-light hover:bg-emerald-800 transition-all duration-300 mb-32 tracking-wide">
                 Zadzwoń: 889 987 681
             </a>
 
-            <!-- Services -->
-            <section class="w-full mb-24">
-                <h2 class="text-3xl font-bold mb-12 text-slate-900">Zakres Usług</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                    <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition">
-                        <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Instalacje Wodno-Kanalizacyjne</h3>
-                        <p class="text-slate-600 text-lg leading-relaxed">Trwałe i bezpieczne układy rozprowadzania ciepłej i zimnej wody. Kompleksowe wykonawstwo w nowych i remontowanych budynkach.</p>
-                    </div>
-                    <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition">
-                        <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Pompy Ciepła</h3>
-                        <p class="text-slate-600 text-lg leading-relaxed">Dobór, profesjonalny montaż i serwis nowoczesnych pomp ciepła. Ciesz się ekologicznym i oszczędnym ogrzewaniem.</p>
-                    </div>
+            <div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 text-left">
+                <div>
+                    <h3 class="text-xl font-normal text-emerald-900 mb-6">Instalacje Wodne</h3>
+                    <p class="text-neutral-500 font-light leading-relaxed">Kompleksowe rozprowadzanie wody i kanalizacji. Dbamy o każdy detal, gwarantując bezawaryjność na lata.</p>
                 </div>
-            </section>
+                <div>
+                    <h3 class="text-xl font-normal text-emerald-900 mb-6">Pompy Ciepła</h3>
+                    <p class="text-neutral-500 font-light leading-relaxed">Nowoczesne i ekologiczne systemy grzewcze. Czysty montaż, pełne doradztwo i optymalizacja kosztów.</p>
+                </div>
+            </div>
+        ` : ''}
 
-            <!-- Portfolio preview -->
-            <section class="w-full">
-                <h2 class="text-3xl font-bold mb-12 text-slate-900">Ostatnie Realizacje</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div class="aspect-video bg-slate-200 rounded-3xl flex items-center justify-center text-slate-500 font-medium text-lg">Miejsce na zdjęcie 1</div>
-                    <div class="aspect-video bg-slate-200 rounded-3xl flex items-center justify-center text-slate-500 font-medium text-lg">Miejsce na zdjęcie 2</div>
+        ${p.name === 'o-nas.html' ? `
+            <div class="w-full max-w-2xl text-left">
+                <p class="text-neutral-500 font-light leading-relaxed mb-8 text-lg">Jesteśmy zespołem doświadczonych instalatorów z Łowicza. Wierzymy, że dobrze wykonana praca nie wymaga poprawek. Stawiamy na czystość, terminowość i najlepsze materiały dostępne na rynku.</p>
+                <p class="text-neutral-500 font-light leading-relaxed text-lg">Nasze doświadczenie obejmuje zarówno nowoczesne budownictwo, jak i modernizacje starszych obiektów.</p>
+            </div>
+        ` : ''}
+
+        ${p.name === 'uslugi.html' ? `
+            <div class="w-full max-w-3xl text-left space-y-16">
+                <div class="border-t border-neutral-100 pt-8">
+                    <h3 class="text-2xl font-normal text-emerald-900 mb-4">Woda i Kanalizacja</h3>
+                    <p class="text-neutral-500 font-light leading-relaxed">Projektowanie i wykonawstwo przyłączy, wewnętrznych instalacji sanitarnych. Używamy miedzi, PEX i sprawdzonych systemów zaciskowych.</p>
                 </div>
-                <div class="mt-10">
-                    <a href="realizacje.html" class="text-blue-600 font-bold text-lg hover:underline">Zobacz więcej realizacji &rarr;</a>
+                <div class="border-t border-neutral-100 pt-8">
+                    <h3 class="text-2xl font-normal text-emerald-900 mb-4">Ogrzewanie i Pompy Ciepła</h3>
+                    <p class="text-neutral-500 font-light leading-relaxed">Dobór urządzeń do zapotrzebowania budynku. Montaż ogrzewania podłogowego, grzejnikowego oraz pomp ciepła wiodących producentów.</p>
                 </div>
-            </section>
+            </div>
+        ` : ''}
+
+        ${p.name === 'realizacje.html' ? `
+            <div class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
+                <div class="aspect-square bg-neutral-50 rounded-3xl flex items-center justify-center text-neutral-300 font-light">Zdjęcie realizacji 1</div>
+                <div class="aspect-square bg-neutral-50 rounded-3xl flex items-center justify-center text-neutral-300 font-light">Zdjęcie realizacji 2</div>
+                <div class="aspect-square bg-neutral-50 rounded-3xl flex items-center justify-center text-neutral-300 font-light">Zdjęcie realizacji 3</div>
+                <div class="aspect-square bg-neutral-50 rounded-3xl flex items-center justify-center text-neutral-300 font-light">Zdjęcie realizacji 4</div>
+            </div>
+        ` : ''}
+
+        ${p.name === 'recenzje.html' ? `
+            <div class="w-full max-w-3xl text-left space-y-16 mt-8">
+                <div>
+                    <p class="text-neutral-500 font-light leading-relaxed text-lg italic">"Szybko, czysto i profesjonalnie. Pompa ciepła działa bez zarzutu."</p>
+                    <p class="mt-4 text-emerald-900 font-normal">— Jan, Łowicz</p>
+                </div>
+                <div>
+                    <p class="text-neutral-500 font-light leading-relaxed text-lg italic">"Pan Łukasz poprawiał instalację po poprzedniej ekipie. Pełen profesjonalizm i dbałość o detale."</p>
+                    <p class="mt-4 text-emerald-900 font-normal">— Anna, Skierniewice</p>
+                </div>
+            </div>
         ` : ''}
 
         ${p.name === 'faq.html' ? `
-            <div class="w-full max-w-3xl text-left space-y-8 mt-12">
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-                    <h3 class="font-bold text-xl text-slate-900 mb-4">Ile trwa montaż pompy ciepła?</h3>
-                    <p class="text-slate-600 text-lg leading-relaxed">Zazwyczaj od 2 do 5 dni roboczych, w zależności od specyfiki budynku.</p>
+            <div class="w-full max-w-3xl text-left space-y-12 mt-8">
+                <div>
+                    <h3 class="font-normal text-xl text-emerald-900 mb-4">Ile czasu zajmuje montaż pompy ciepła?</h3>
+                    <p class="text-neutral-500 font-light leading-relaxed">Standardowo od 2 do 5 dni, w zależności od przygotowania kotłowni i wielkości budynku.</p>
                 </div>
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-                    <h3 class="font-bold text-xl text-slate-900 mb-4">Czy działacie poza Łowiczem?</h3>
-                    <p class="text-slate-600 text-lg leading-relaxed">Tak, obsługujemy Łowicz i okolice w promieniu do 30 kilometrów.</p>
+                <div>
+                    <h3 class="font-normal text-xl text-emerald-900 mb-4">W jakim rejonie świadczycie usługi?</h3>
+                    <p class="text-neutral-500 font-light leading-relaxed">Głównie w Łowiczu i okolicach w promieniu do 30-40 kilometrów.</p>
                 </div>
             </div>
         ` : ''}
+
+        ${p.name === 'kontakt.html' ? `
+            <div class="w-full max-w-md text-left mt-8">
+                <p class="text-neutral-500 font-light leading-relaxed mb-8">Zadzwoń do nas, aby umówić się na wycenę. Jesteśmy dostępni od poniedziałku do piątku.</p>
+                <div class="bg-neutral-50 p-8 rounded-3xl">
+                    <p class="text-sm font-light text-neutral-400 mb-2">Telefon kontaktowy</p>
+                    <p class="text-2xl font-normal text-emerald-900 mb-8">889 987 681</p>
+                    
+                    <p class="text-sm font-light text-neutral-400 mb-2">Social Media</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-emerald-900 hover:text-emerald-700 font-light transition">Facebook</a>
+                        <a href="#" class="text-emerald-900 hover:text-emerald-700 font-light transition">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        ` : ''}
+
     </main>
 
-    <!-- Footer -->
-    <footer class="w-full bg-slate-900 text-slate-400 py-12 px-6 text-center mt-auto">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <p class="text-sm md:text-base">&copy; 2026 Łukasz Bagnowski - Usługi Hydrauliczne. Łowicz.</p>
-            <div class="flex space-x-8">
-                <a href="#" class="hover:text-white transition font-medium">Facebook</a>
-                <a href="#" class="hover:text-white transition font-medium">Instagram</a>
-            </div>
-        </div>
+    <footer class="w-full py-12 px-6 text-center mt-auto border-t border-neutral-100">
+        <p class="text-sm font-light text-neutral-400 tracking-wide">&copy; 2026 Łukasz Bagnowski - Usługi Hydrauliczne.</p>
     </footer>
 </body>
 </html>`;
